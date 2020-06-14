@@ -3,10 +3,15 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AccountsController } from './accounts/accounts.controller';
 import { AccountsService } from './accounts/accounts.service';
+import { TypeOrmModule } from '@nestjs/typeorm'
+import { Connection } from 'typeorm';
+import { AccountModule } from './accounts/accounts.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController, AccountsController],
-  providers: [AppService, AccountsService],
+  imports: [TypeOrmModule.forRoot(), AccountModule],
+  // controllers: [ AppController, AccountsController],
+  // providers: [AppService, AccountsService],
 })
-export class AppModule {}
+export class AppModule {
+  constructor( private connection: Connection) {}
+}
