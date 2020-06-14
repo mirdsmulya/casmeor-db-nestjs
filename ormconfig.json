@@ -1,13 +1,13 @@
 {
     "type": "mysql",
     "host": "localhost",
-    "port": 3310,
+    "port": 3318,
     "username": "root",
     "password": "asdd",
-    "database": "mysql",
+    "database": "db",
     "synchronize": true,
     "logging": false,
     "entities": [
-       "src/entity/**/*.ts"
+       "dist/**/*.entity.js"
     ]
  }
