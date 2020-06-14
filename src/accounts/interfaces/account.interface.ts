@@ -3,5 +3,6 @@ export interface Account {
     username: string,
     role: string,
     password: string,
-    nip: string
+    nip: string,
+    id:string
 }
