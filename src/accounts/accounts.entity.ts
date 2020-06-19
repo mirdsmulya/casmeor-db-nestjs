@@ -14,14 +14,9 @@ export class Account {
   username: string;
 
   @Column()
-  nip: string;
-
-  @Column()
   role: string;
 
   @Column()
   password: string;
 }
 
-
-// class none {}
