@@ -10,7 +10,7 @@
  
 ## Description
 
-Casmeor App Backend using [Nest](https://github.com/nestjs/nest) framework TypeScript.
+[Casmeor] (https://github.com/mirdsmulya/casmeor) App Backend using [Nest](https://github.com/nestjs/nest) framework with TypeScript.
 
 
 ## Installation
