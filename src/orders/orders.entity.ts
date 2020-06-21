@@ -1,34 +1,37 @@
 
 
-import { Entity, Column, PrimaryColumn } from 'typeorm';
+import { Entity, Column, PrimaryColumn, OneToMany, JoinColumn } from 'typeorm';
+import { OrderList } from '../orderList/orderList.entity';
 
 @Entity()
-export class Order {
-  @PrimaryColumn()
-  id: string;
+    export class Order {
+    @PrimaryColumn()
+    id: string;
 
-  @Column()
-  cashierIdentity: string;
+    @Column()
+    cashierIdentity: string;
 
-  @Column()
-  name: string;
+    @Column()
+    name: string;
 
-  @Column()
-  currentDate: string;
+    @Column()
+    currentDate: string;
 
-  @Column()
-  paymentStatus: string;
+    @Column()
+    paymentStatus: string;
 
-  @Column()
-  totalAmount: number;
+    @Column()
+    totalAmount: number;
 
-  @Column()
-  orderNumber: number;
+    @Column()
+    orderNumber: number;
 
-  @Column()
-  tableNumber: number;
+    @Column()
+    tableNumber: number;
 
+    @OneToMany(type => OrderList, orderList => orderList.order)
+    @JoinColumn()
+    orderList: OrderList[];
 
-
-}
+    }
 

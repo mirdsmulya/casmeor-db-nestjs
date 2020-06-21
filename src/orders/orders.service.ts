@@ -16,7 +16,7 @@ export class OrdersService {
     }
 
     findOne(id: string): Promise<Order> {
-        return this.orderRepository.findOne(id);
+        return this.orderRepository.findOne(id, {relations: ["orderList"]});
     }
 
     async remove(id: string): Promise<void> {
