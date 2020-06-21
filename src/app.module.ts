@@ -1,14 +1,12 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { AccountsController } from './accounts/accounts.controller';
-import { AccountsService } from './accounts/accounts.service';
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { Connection } from 'typeorm';
 import { AccountModule } from './accounts/accounts.module';
+import { MenuModule } from './menus/menus.module'
+import { OrderModule } from './orders/orders.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(), AccountModule],
+  imports: [TypeOrmModule.forRoot(), AccountModule, MenuModule, OrderModule],
   // controllers: [ AppController, AccountsController],
   // providers: [AppService, AccountsService],
 })
