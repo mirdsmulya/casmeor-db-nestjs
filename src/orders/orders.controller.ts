@@ -32,6 +32,11 @@ export class OrdersController {
 
     @Put(':id')
     update(@Param() id: string, @Body() updateOrderDto: UpdateOrderDto)  {
+        
+        if (updateOrderDto.paymentStatus == "PAID") {
+            delete updateOrderDto.orderList;
+            return this.orderService.confirmPayment(id, updateOrderDto)
+        }
         const pureOrder = Object.assign({}, updateOrderDto);
         delete pureOrder.orderList;
         return this.orderService.updateOrder(id, pureOrder, updateOrderDto.orderList)

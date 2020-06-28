@@ -36,5 +36,9 @@ export class OrdersService {
         await this.orderRepository.save(order)
         await this.orderListService.saveOrderList(orderList)
     }
+
+    async confirmPayment(id: string, order: object): Promise<void> {
+        await this.orderRepository.update(id, order);
+    }
     
 }
