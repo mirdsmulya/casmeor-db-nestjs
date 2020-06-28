@@ -7,4 +7,5 @@ export class UpdateOrderDto {
     orderNumber: number;
     tableNumber: number;
     id:string;
+    orderList: [];
 }

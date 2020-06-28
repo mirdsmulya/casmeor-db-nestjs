@@ -7,4 +7,5 @@ export class CreateOrderDto {
     orderNumber: number;
     tableNumber: number;
     id:string;
+    orderList: [];
 }
