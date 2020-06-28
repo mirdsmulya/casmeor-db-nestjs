@@ -29,7 +29,7 @@ import { OrderList } from '../orderList/orderList.entity';
     @Column()
     tableNumber: number;
 
-    @OneToMany(type => OrderList, orderList => orderList.order)
+    @OneToMany(type => OrderList, orderList => orderList.order, {onDelete: 'CASCADE'})
     @JoinColumn()
     orderList: OrderList[];
 
