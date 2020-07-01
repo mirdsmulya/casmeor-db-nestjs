@@ -15,8 +15,8 @@ export class AccountsService {
         return this.accountRepository.find();
     }
 
-    findOne(id: string): Promise<Account> {
-        return this.accountRepository.findOne(id);
+    findOne(username: string): Promise<Account> {
+        return this.accountRepository.findOne({username});
     }
 
     async remove(id: string): Promise<void> {
