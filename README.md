@@ -10,7 +10,8 @@
  
 ## Description
 
-[Casmeor](https://github.com/mirdsmulya/casmeor) App Backend using [Nest](https://github.com/nestjs/nest) framework with TypeScript.
+[Casmeor](https://github.com/mirdsmulya/casmeor) App Backend using [Nest](https://github.com/nestjs/nest) framework with TypeScript. 
+Include with Typeorm and JSON Web Token
 
 
 ## Installation
@@ -22,7 +23,6 @@ $ npm install
 ## Running the app
 
 ```bash
-# development
 $ npm run start
 
 ```
