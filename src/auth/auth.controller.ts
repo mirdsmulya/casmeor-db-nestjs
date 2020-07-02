@@ -11,8 +11,6 @@ export class AuthController {
   @Post('auth/login')
   async login(@Request() req) {
     const user = req.body;
-    console.log(user);
-    
-    return this.authService.validateUser(user.username, user.password);
+    return this.authService.login(user);
   }
 }
