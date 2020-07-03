@@ -21,16 +21,19 @@ export class AccountsController {
         return this.accountService.findOne(account.username)
     }
     
+    @UseGuards(JwtAuthGuard)
     @Delete(':id')
     remove(@Param() account) {
         return this.accountService.remove(account.id)
     }
 
+    @UseGuards(JwtAuthGuard)
     @Post()
     create(@Body() createAccountDto: CreateAccountDto) {
         return this.accountService.saveAccount(createAccountDto)
     }
 
+    @UseGuards(JwtAuthGuard)
     @Put(':id')
     update(@Param() id: string, @Body() updateAccountDto: UpdateAccountDto)  {
         return this.accountService.updateAccount(id, updateAccountDto)
